@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">SemesterApplication</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="semester_home_label">Semester Home Fragment</string>
+    <string name="semester_question_fragment">Semester Question Fragment</string>
+
+    <string name="hello_user">Hello, %1$s</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="subjects">Subjects</string>
+    <string name="take_exam">Take Exam</string>
+    <string name="exam_history">Exam History</string>
+    <string name="question_no">QUESTION : %1$s/%2$s </string>
+    <string name="right">Right</string>
+    <string name="wrong">Wrong</string>
+    <string name="skipped">Skipped</string>
+    <string name="see_results">See result</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="take_exams">Take Exam -> </string>
+    <string name="finish">Finish</string>
+
+    <string name="bangle">Bangle</string>
+    <string name="english">English</string>
+    <string name="computer">Computer</string>
+
+    <string name="score">Score : %1$s out of %2$s</string>
+    <string name="score_out_of_total">%1$s/%2$s</string>
+    <string name="question">%1$s . %2$s</string>
+    <string name="next">Next</string>
+    <string name="select_any_answer">Select any answer</string>
+    <string name="exam_time">Time: 3:00</string>
+    <string name="leave_app">Are you sure you want to leave from app ?</string>
+
+
+</resources>

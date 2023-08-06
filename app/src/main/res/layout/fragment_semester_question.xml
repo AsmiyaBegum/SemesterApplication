@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:background="@color/purple_500"
+      tools:context=".SemesterQuestionFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/questionScreen"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+      <TextView
+          android:id="@+id/questionNo"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:paddingTop="10dp"
+          android:paddingBottom="10dp"
+          android:paddingStart="15dp"
+          android:paddingEnd="15dp"
+          android:textSize="14sp"
+          android:gravity="center"
+          android:text="@string/question_no"
+          android:textColor="@color/purple_500"
+          android:fontFamily="@font/roboto_medium"
+          android:background="@drawable/rectangular_border"
+          android:layout_marginTop="20dp"
+          android:layout_marginStart="12dp"
+          app:layout_constraintEnd_toStartOf="@id/examTimer"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+
+      <TextView
+          android:id="@+id/examTimer"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:textSize="16sp"
+          android:fontFamily="@font/roboto_medium"
+          android:textColor="@color/silver_chalice_grey"
+          android:layout_marginStart="30dp"
+          android:layout_marginEnd="8dp"
+          app:layout_constraintStart_toEndOf="@id/questionNo"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toTopOf="@id/questionNo"
+          app:layout_constraintBottom_toBottomOf="@id/questionNo"
+          app:drawableStartCompat="@drawable/ic_timer"
+          app:drawableTint="@color/yellow" />
+
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_marginTop="45dp"
+          app:layout_constraintTop_toBottomOf="@id/questionNo"
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:background="@drawable/top_corner_rounded">
+
+        <TextView
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/take_exams"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--       we can use radiogroup with radio button(if the option is fixed size) ,or else we can create them with listview -->
+
+        <RadioGroup
+            android:id="@+id/optionList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/question"
+            android:layout_marginTop="30dp">
+
+          <RadioButton
+              android:id="@+id/option1"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/finish"
+              android:textSize="14sp"
+              android:textColor="@color/raisin_black"
+              android:fontFamily="@font/roboto_medium"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <RadioButton
+              android:id="@+id/option2"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/finish"
+              android:textSize="14sp"
+              android:textColor="@color/raisin_black"
+              android:fontFamily="@font/roboto_medium"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <RadioButton
+              android:id="@+id/option3"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/finish"
+              android:textSize="14sp"
+              android:textColor="@color/raisin_black"
+              android:fontFamily="@font/roboto_medium"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+          <RadioButton
+              android:id="@+id/option4"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/finish"
+              android:textSize="14sp"
+              android:textColor="@color/raisin_black"
+              android:fontFamily="@font/roboto_medium"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent" />
+
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/next"
+            android:textSize="18sp"
+            android:padding="20dp"
+            android:fontFamily="@font/roboto_bold"
+            android:textColor="@color/raisin_black"
+            android:backgroundTint="@color/dark_gray_x11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/optionList" />
+
+        <Button
+            android:id="@+id/finish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"
+            android:fontFamily="@font/roboto_bold"
+            android:text="@string/finish"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:padding="20dp"
+            android:textColor="@color/dark_violet"
+            android:backgroundTint="@color/silver_chalice_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/next" />
+
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/finishLayout"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/scoreLayout"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/corner_rounded_rectangle"
+          android:layout_marginTop="40dp"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/userImage"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:src="@drawable/user_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="8dp"
+            android:contentDescription="@string/hello_user"/>
+
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/raisin_black"
+            android:textSize="22sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userImage" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/userName"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+          <ImageView
+              android:id="@+id/cupIcon"
+              android:layout_width="45dp"
+              android:layout_height="45dp"
+              android:src="@drawable/ic_cup"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toStartOf="@id/score"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              android:contentDescription="@string/see_results"/>
+
+          <TextView
+              android:id="@+id/score"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/score"
+              android:fontFamily="@font/roboto_medium"
+              android:textColor="@color/raisin_black"
+              android:textSize="22sp"
+              android:layout_marginTop="10dp"
+              android:layout_marginBottom="10dp"
+              app:layout_constraintHorizontal_bias="0"
+              app:layout_constraintStart_toEndOf="@id/cupIcon"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="50dp"
+          android:background="@drawable/corner_rounded_rectangle"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/scoreLayout">
+
+        <TextView
+            android:id="@+id/semester"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="19sp"
+            android:textColor="@color/text_black"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:drawableLeftCompat="@drawable/ic_laptop" />
+
+        <TextView
+            android:id="@+id/scoreOutOfTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/score_out_of_total"
+            android:fontFamily="@font/roboto_medium"
+            android:textSize="18sp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/semester" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/semesterResultSeggregation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scoreOutOfTotal"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/rightCard"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:padding="20dp"
+              android:layout_marginTop="10dp"
+              android:layout_marginStart="10dp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toStartOf="@id/wrongCard"
+              app:layout_constraintTop_toTopOf="parent"
+              android:background="@drawable/corner_rounded_rectangle"
+              android:backgroundTint="@color/sky_blue">
+
+            <TextView
+                android:id="@+id/rightCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/right"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rightCount" />
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/wrongCard"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:padding="20dp"
+              android:layout_marginTop="10dp"
+              android:layout_marginStart="10dp"
+              android:background="@drawable/corner_rounded_rectangle"
+              android:backgroundTint="@color/red"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toEndOf="@id/rightCard"
+              app:layout_constraintEnd_toStartOf="@id/skipCard">
+
+            <TextView
+                android:id="@+id/wrongCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/wrong"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/wrong"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/wrongCount" />
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+          <androidx.constraintlayout.widget.ConstraintLayout
+              android:id="@+id/skipCard"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:padding="20dp"
+              android:layout_marginTop="10dp"
+              android:layout_marginStart="10dp"
+              android:layout_marginEnd="10dp"
+              android:background="@drawable/corner_rounded_rectangle"
+              android:backgroundTint="@color/yellow_grey"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toEndOf="@id/wrongCard"
+              app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/skipCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/skip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/skipped"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/skipCount" />
+          </androidx.constraintlayout.widget.ConstraintLayout>
+
+          <Button
+              android:id="@+id/seeResult"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="10dp"
+              android:text="@string/see_results"
+              android:textSize="14sp"
+              android:textAllCaps="false"
+              android:padding="25dp"
+              android:textColor="@color/white"
+              android:fontFamily="@font/roboto_medium"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/skipCard" />
+
+          <Button
+              android:id="@+id/backToHome"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_margin="10dp"
+              android:textAllCaps="false"
+              android:text="@string/back_to_home"
+              android:textSize="14sp"
+              android:padding="25dp"
+              android:fontFamily="@font/roboto_medium"
+              android:textColor="@color/black"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/seeResult"
+              app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
